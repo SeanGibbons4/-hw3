@@ -1,0 +1,27 @@
+<h1>New Post for <%= @place.name %></h1>
+
+<form method="post" action="/entries">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="entry[place_id]" value="<%= @place.id %>">
+
+  <p>
+    <label>Title</label><br>
+    <input type="text" name="entry[title]">
+  </p>
+
+  <p>
+    <label>Description</label><br>
+    <textarea name="entry[description]"></textarea>
+  </p>
+
+  <p>
+    <label>Occurred On</label><br>
+    <input type="date" name="entry[occurred_on]">
+  </p>
+
+  <p>
+    <input type="submit" value="Create Post">
+  </p>
+</form>
+
+<p><a href="/places/<%= @place.id %>">Back to <%= @place.name %></a></p>

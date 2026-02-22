@@ -1,0 +1,19 @@
+<h1><%= @place.name %></h1>
+
+<br>
+
+<% for entry in @entries %>
+  <div>
+    <h2><%= entry.title %></h2>
+    <p><small><em><%= entry.occurred_on %></em></small></p>
+    <p><%= entry.description %></p>
+  </div>
+<% end %>
+
+<br>
+<br>
+<br>
+<br>
+
+<p><a href="/places/<%= @place.id %>/entries/new">New Post</a></p>
+<p><a href="/travel_log">Back to Places I've Been</a></p>
